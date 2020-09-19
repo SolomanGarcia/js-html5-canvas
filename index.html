@@ -22,6 +22,9 @@
       function draw(e) {
         // stop function from running if not moused down
         if (!isDrawing) return;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(e.offsetX, e.offsetY);
       }
 
       canvas.addEventListener("mousemove", draw);
