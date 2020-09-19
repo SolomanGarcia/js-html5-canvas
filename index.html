@@ -23,8 +23,13 @@
         // stop function from running if not moused down
         if (!isDrawing) return;
         ctx.beginPath();
+        // start from
         ctx.moveTo(lastX, lastY);
+        // go to
         ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        lastX = e.offsetX;
+        lastY = e.offsetY;
       }
 
       canvas.addEventListener("mousemove", draw);
